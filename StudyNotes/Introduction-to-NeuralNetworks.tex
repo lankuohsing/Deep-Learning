@@ -1,0 +1,46 @@
+\documentclass[a4paper, 11pt, oneside]{article}
+    \usepackage{amsmath,amssymb}
+    % 使用CTEX中文包
+    \usepackage{ctex}
+    \usepackage{mathrsfs}   %花体字母
+    \usepackage{latexsym}
+    \usepackage{CJK}
+    \usepackage{graphicx}
+    % 添加首行缩进，两个字符
+    \usepackage{indentfirst}
+    \setlength{\parindent}{2em}
+    \begin{document}
+    \begin{CJK*}{GBK}{song}
+        \title{\large{\CJKfamily{hei}深度学习笔记}}
+        \author{兰国兴\\
+        清华大学自动化系\\
+        languoxing@126.com}
+        \date{}
+        \maketitle
+    \section{神经网络}
+    \subsection{概述}
+    \indent 以监督学习为例，假设我们有训练样本\((x(^i),y(^i))\)，那么神经网络算法能够提供一种复杂且非线性的假设模型\(h_{W,b}(x)\)来拟合我们的数据。\\
+    \indent 为了描述神经网络，我们先从最简单的神经网络讲起，这个神经网络仅由一个“神经元”构成，如下图所示：
+    \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{SingleNeuron.eps}
+    \caption{单个神经元示意图}\label{fig.:dummy}
+    \end{figure}
+    \\
+    \indent 这个“神经元”是一个以$x_1, x_2, x_3$及截距$+1$为输入值的运算单元，其输出为$$h_{W,b}(x)=f(W^Tx)=f(\sum_{i=1}^3W_ix_i+b)$$
+    其中$f: mathscr{R}\to mathscr{R}$被称为“激活函数”。在本教程中，我们选用sigmoid函数作为激活函数$f(\cdot)$$$f(z)=\frac{1}{1+exp(-z)}$$
+    可以看出，这个单一“神经元”的输入-输出映射关系其实就是一个逻辑回归(logistic regression)。\\
+    \indent 如果选择sigmoid函数作为激活函数$f$，那么有$f^{\prime}(z)=f(z)(1-f(z))$
+    \subsection{神经网络模型}
+    \indent 所谓神经网络就是将许多个单一“神经元”联结在一起，这样，一个“神经元”的输出就可以是另一个“神经元”的输入。例如，下图就是一个简单的神经网络：
+    \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{SingleNeuron.eps}
+    \caption{单个神经元示意图}\label{fig.:dummy}
+    \end{figure}
+    \\
+
+
+
+    \end{CJK*}
+    \end{document}
